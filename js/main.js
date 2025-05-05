@@ -39,70 +39,70 @@ document.addEventListener('DOMContentLoaded', function() {
 // Gallery images data
 const galleryImages = [
     {
-        src: 'images/1.WebP',
+        src: 'images/1w.WebP',
         alt: 'Zdjęcie 1',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/2.WebP',
+        src: 'images/2w.WebP',
         alt: 'Zdjęcie 2',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/3.WebP',
+        src: 'images/3w.WebP',
         alt: 'Zdjęcie 3',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/4.WebP',
+        src: 'images/4w.WebP',
         alt: 'Zdjęcie 4',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/5.WebP',
+        src: 'images/5w.WebP',
         alt: 'Zdjęcie 5',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/6.WebP',
+        src: 'images/6w.WebP',
         alt: 'Zdjęcie 6',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/7.WebP',
+        src: 'images/7w.WebP',
         alt: 'Zdjęcie 7',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/8.WebP',
+        src: 'images/8w.WebP',
         alt: 'Zdjęcie 8',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/9.WebP',
+        src: 'images/9w.WebP',
         alt: 'Zdjęcie 9',
         category: 'landscape',
         title: 'Tatry',
         description: 'Lasy górskie'
     },
     {
-        src: 'images/10.WebP',
+        src: 'images/10w.WebP',
         alt: 'Zdjęcie 10',
         category: 'landscape',
         title: 'Tatry',
