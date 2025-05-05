@@ -1,0 +1,50 @@
+/* Dodatkowe style poza Tailwind CSS */
+
+/* Animacje */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Style dla galerii */
+.gallery-item {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Style dla formularza */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Style dla przycisków */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Style dla obrazów w galerii */
+.gallery-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .gallery-image {
+        height: 200px;
+    }
+} 
