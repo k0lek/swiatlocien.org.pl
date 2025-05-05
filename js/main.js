@@ -14,25 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close mobile menu when clicking a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
                 mobileMenu.classList.add('hidden');
-            });
+            }
         });
     }
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.addEventListener('click', function(e) {
+        if (e.target.matches('a[href^="#"]')) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(e.target.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
             }
-        });
+        }
     });
 });
 
@@ -122,7 +121,8 @@ function createGalleryItem(image) {
                class="lightbox-link">
                 <img src="${image.src}" 
                      alt="${image.alt}" 
-                     class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-110">
+                     class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                     onerror="this.onerror=null; this.src='images/placeholder.jpg';">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
                     <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 class="text-xl font-bold">${image.title}</h3>
@@ -185,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'alwaysShowNavOnTouchDevices': true,
         'showImageNumberLabel': true,
         'fitImagesInViewport': true,
-        'wrapAround': true,
         'captionPosition': 'bottom',
         'captionSelector': 'img',
         'captionType': 'attr',
