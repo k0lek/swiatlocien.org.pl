@@ -39,46 +39,74 @@ document.addEventListener('DOMContentLoaded', function() {
 // Gallery images data
 const galleryImages = [
     {
-        src: 'images/1.jpg',
+        src: 'images/1.WebP',
         alt: 'Zdjęcie 1',
-        category: 'portrait',
-        title: 'Portret 1',
-        description: 'Profesjonalna sesja portretowa'
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
     },
     {
-        src: 'images/2.png',
+        src: 'images/2.WebP',
         alt: 'Zdjęcie 2',
         category: 'landscape',
-        title: 'Krajobraz 1',
-        description: 'Zachód słońca nad górami'
+        title: 'Tatry',
+        description: 'Lasy górskie'
     },
     {
-        src: 'images/3.png',
+        src: 'images/3.WebP',
         alt: 'Zdjęcie 3',
-        category: 'art',
-        title: 'Art 1',
-        description: 'Abstrakcyjna kompozycja'
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
     },
     {
-        src: 'images/4.png',
+        src: 'images/4.WebP',
         alt: 'Zdjęcie 4',
-        category: 'art',
-        title: 'Art 2',
-        description: 'Abstrakcyjna kompozycja'
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
     },
     {
-        src: 'images/5.png',
+        src: 'images/5.WebP',
         alt: 'Zdjęcie 5',
-        category: 'art',
-        title: 'Art 3',
-        description: 'Abstrakcyjna kompozycja'
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
     },
     {
-        src: 'images/6.png',
+        src: 'images/6.WebP',
         alt: 'Zdjęcie 6',
-        category: 'art',
-        title: 'Art 4',
-        description: 'Abstrakcyjna kompozycja'
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
+    },
+    {
+        src: 'images/7.WebP',
+        alt: 'Zdjęcie 7',
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
+    },
+    {
+        src: 'images/8.WebP',
+        alt: 'Zdjęcie 8',
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
+    },
+    {
+        src: 'images/9.WebP',
+        alt: 'Zdjęcie 9',
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
+    },
+    {
+        src: 'images/10.WebP',
+        alt: 'Zdjęcie 10',
+        category: 'landscape',
+        title: 'Tatry',
+        description: 'Lasy górskie'
     }
     // Add more images as needed
 ];
