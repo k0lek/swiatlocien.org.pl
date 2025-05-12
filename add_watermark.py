@@ -13,14 +13,17 @@ def add_watermark(input_path, output_path, text="© swiatlocien.org.pl", opacity
     # Utwórz obiekt do rysowania
     draw = ImageDraw.Draw(watermark)
     
+    # Oblicz rozmiar czcionki na podstawie szerokości obrazu (5% szerokości)
+    base_font_size = int(image.width * 0.04)
+    
     # Ustaw czcionkę (możesz zmienić na inną)
     try:
         # Próba użycia czcionki z polskimi znakami
-        font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 80)
+        font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", base_font_size)
     except:
         try:
             # Alternatywna czcionka
-            font = ImageFont.truetype("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf", 80)
+            font = ImageFont.truetype("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf", base_font_size)
         except:
             font = ImageFont.load_default()
     
