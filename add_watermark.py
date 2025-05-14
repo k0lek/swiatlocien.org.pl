@@ -65,12 +65,12 @@ def process_directory(input_dir, output_dir):
     # Utwórz katalog wyjściowy jeśli nie istnieje
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    
+        
     # Przetwórz wszystkie pliki w katalogu
     for filename in os.listdir(input_dir):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', ".webp")):
             input_path = os.path.join(input_dir, filename)
-            output_path = os.path.join(output_dir, filename.split('.')[0] + "w" + ".WebP")
+            output_path = os.path.join(output_dir, filename + ".WebP")
             
             try:
                 add_watermark(input_path, output_path)
@@ -80,7 +80,7 @@ def process_directory(input_dir, output_dir):
 
 if __name__ == "__main__":
     # Ścieżki do katalogów
-    input_directory = "images"  # Katalog ze zdjęciami źródłowymi
+    input_directory = "images2"  # Katalog ze zdjęciami źródłowymi
     output_directory = "images"  # Katalog na zdjęcia z watermarkem
     
     # Przetwórz wszystkie zdjęcia
