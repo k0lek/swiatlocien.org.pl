@@ -296,7 +296,7 @@ function createGalleryItem(image) {
     const link = document.createElement('a');
     link.href = image.src;
     link.setAttribute('data-lightbox', `gallery-${image.category}`);
-    link.setAttribute('data-title', `${image.title}<br>${image.description}`);
+    link.setAttribute('data-title', `${image.title}<br><span class="font-normal opacity-80">${image.description}</span>`);
     link.setAttribute('data-category', image.category);
     
     const img = document.createElement('img');
