@@ -3,20 +3,23 @@ document.addEventListener('contextmenu', (e) => e.preventDefault());
 document.addEventListener('dragstart', (e) => e.preventDefault());
 document.addEventListener('selectstart', (e) => e.preventDefault());
 
+// Store current category
+let currentCategory = 'all';
+
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.querySelector('#mobile-menu-button');
     const mobileMenu = document.querySelector('#mobile-menu');
 
     if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-    });
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
 
         // Close mobile menu when clicking a link
         mobileMenu.addEventListener('click', function(e) {
             if (e.target.tagName === 'A') {
-            mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
             }
         });
     }
@@ -283,94 +286,102 @@ const galleryImages = [
         description: 'Interesowna owca górska w Zakopanem.'
     }
 ];
-// Function to create gallery items
+
+// Function to create gallery item
 function createGalleryItem(image) {
-    return `
-        <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg" data-category="${image.category}">
-            <a href="${image.src}" 
-               data-lightbox="gallery" 
-               data-title="${image.title}" 
-               data-description="${image.description}"
-               class="lightbox-link">
-                <img src="${image.src}" 
-                     alt="${image.alt}" 
-                     class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-110"
-                     onerror="this.onerror=null; this.src='images/placeholder.jpg';">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                    <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-xl font-bold">${image.title}</h3>
-                        <p class="text-sm mt-1">${image.description}</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    `;
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.dataset.category = image.category;
+    
+    const link = document.createElement('a');
+    link.href = image.src;
+    link.setAttribute('data-lightbox', `gallery-${image.category}`);
+    link.setAttribute('data-title', `${image.title}<br>${image.description}`);
+    link.setAttribute('data-category', image.category);
+    
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.alt = image.alt;
+    img.className = 'w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 hover:scale-105';
+    
+    link.appendChild(img);
+    item.appendChild(link);
+    return item;
 }
 
-// Load gallery items
+// Function to load gallery
 function loadGallery() {
-    const galleryContainer = document.querySelector('#gallery .grid');
-    if (galleryContainer) {
-        galleryContainer.innerHTML = galleryImages.map(image => createGalleryItem(image)).join('');
-    }
+    const galleryContainer = document.querySelector('.grid');
+    if (!galleryContainer) return;
+
+    galleryContainer.innerHTML = '';
+    galleryImages.forEach(image => {
+        galleryContainer.appendChild(createGalleryItem(image));
+    });
 }
 
-// Gallery filtering
+// Function to initialize gallery filters
 function initGalleryFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // Update current category
+            currentCategory = button.dataset.filter;
+            
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            const filter = button.getAttribute('data-filter');
-
+            // Filter gallery items and update lightbox groups
             galleryItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
+                const shouldShow = currentCategory === 'all' || item.dataset.category === currentCategory;
+                item.style.display = shouldShow ? 'block' : 'none';
+                
+                const link = item.querySelector('a');
+                if (link) {
+                    link.setAttribute('data-lightbox', shouldShow ? 
+                        (currentCategory === 'all' ? 'gallery-all' : `gallery-${item.dataset.category}`) : 
+                        '');
                 }
             });
         });
     });
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize lightbox with custom options
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'albumLabel': 'Zdjęcie %1 z %2',
+    'fadeDuration': 300,
+    'imageFadeDuration': 300,
+    'positionFromTop': 100,
+    'maxWidth': 1200,
+    'maxHeight': 800,
+    'disableScrolling': true,
+    'alwaysShowNavOnTouchDevices': true,
+    'showImageNumberLabel': true,
+    'fitImagesInViewport': true,
+    'captionPosition': 'bottom',
+    'captionSelector': 'img',
+    'captionType': 'attr',
+    'captionsData': 'title',
+    'captionHTML': true,
+    'captionClass': 'lightbox-caption',
+    'captionText': function(element) {
+        const title = element.getAttribute('data-title');
+        const description = element.getAttribute('data-description');
+        return `<div class="lightbox-caption-content">
+                    <h3 class="text-xl font-bold mb-2">${title}</h3>
+                    <p class="text-sm">${description}</p>
+                </div>`;
+    }
+});
+
+// Initialize gallery
+document.addEventListener('DOMContentLoaded', function() {
     loadGallery();
     initGalleryFilters();
-    
-    // Configure lightbox
-    lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true,
-        'albumLabel': 'Zdjęcie %1 z %2',
-        'fadeDuration': 300,
-        'imageFadeDuration': 300,
-        'positionFromTop': 100,
-        'maxWidth': 1200,
-        'maxHeight': 800,
-        'disableScrolling': true,
-        'alwaysShowNavOnTouchDevices': true,
-        'showImageNumberLabel': true,
-        'fitImagesInViewport': true,
-        'captionPosition': 'bottom',
-        'captionSelector': 'img',
-        'captionType': 'attr',
-        'captionsData': 'title',
-        'captionHTML': true,
-        'captionClass': 'lightbox-caption',
-        'captionText': function(element) {
-            const title = element.getAttribute('data-title');
-            const description = element.getAttribute('data-description');
-            return `<div class="lightbox-caption-content">
-                        <h3 class="text-xl font-bold mb-2">${title}</h3>
-                        <p class="text-sm">${description}</p>
-                    </div>`;
-        }
-    });
 }); 
