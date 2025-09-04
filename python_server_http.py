@@ -6,4 +6,4 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
     super().end_headers()
 
 if __name__ == "__main__":
-  HTTPServer(("10.0.0.177", 8000), NoCacheHandler).serve_forever()
+  HTTPServer(("10.0.0.177", 8080), NoCacheHandler).serve_forever()

@@ -41,249 +41,431 @@ document.addEventListener('DOMContentLoaded', function() {
 // Gallery images data
 const galleryImages = [
     {
-        src: 'images/0.jpg.WebP',
+        src: 'images/1.webp',
         alt: 'Zdjęcie 1',
         category: 'landscape',
         title: 'Biblioteka w Rydze',
-        description: 'Fasada biblioteki w Rydze na Łotwie.'
+        description: 'Nowoczesna architektura w Rydze.'
     },
     {
-        src: 'images/1.jpg.WebP',
+        src: 'images/2.webp',
         alt: 'Zdjęcie 2',
         category: 'landscape',
-        title: 'Ulica w Rydze',
-        description: 'Starodawna uliczna w centrum Rygi.'
-    },
-    {
-        src: 'images/2.jpg.WebP',
-        alt: 'Zdjęcie 3',
-        category: 'landscape',
-        title: 'Tatry',
-        description: 'Droga do doliny'
-    },
-    {
-        src: 'images/3.jpg.WebP',
-        alt: 'Zdjęcie 4',
-        category: 'landscape',
-        title: 'Kosciół Wang',
-        description: 'Kościoł w Karpaczu z XII wieku.'
-    },
-    {
-        src: 'images/4.jpg.WebP',
-        alt: 'Zdjęcie 5',
-        category: 'landscape',
-        title: 'Jeleniogórski Park Krajobrazowy',
-        description: 'Droga z zamku Chojnik w Jelenij Górze.'
-    },
-    {
-        src: 'images/5.jpg.WebP',
-        alt: 'Zdjęcie 6',
-        category: 'landscape',
-        title: 'Tatry',
-        description: 'Szczyty górskich Tatr.'
-    },
-    {
-        src: 'images/6.jpg.WebP',
-        alt: 'Zdjęcie 7',
-        category: 'landscape',
-        title: 'Tatry',
-        description: 'Lasy górskie'
-    },
-    {
-        src: 'images/7.jpg.WebP',
-        alt: 'Zdjęcie 8',
-        category: 'art',
-        title: 'Codzienność',
-        description: 'Praca na temat "Codzienność w ramach zajęć z fotografii".'
-    },
-    {
-        src: 'images/8.jpg.WebP',
-        alt: 'Zdjęcie 9',
-        category: 'landscape',
-        title: 'Młyn na wsi',
-        description: 'Muzeum wsi w Lublinie.'
-    },
-    {
-        src: 'images/9.jpg.WebP',
-        alt: 'Zdjęcie 10',
-        category: 'art',
-        title: 'Sen na jawie.',
-        description: 'Praca na temat "Sen na jawie" w ramach zajęć z fotografii.'
-    },
-    {
-        src: 'images/10.jpg.WebP',
-        alt: 'Zdjęcie 11',
-        category: 'landscape',
         title: 'Suwalszczyzna',
-        description: 'Okolice miejscowości Wodziłki.'
+        description: 'Piękna wieś w okolicach Suwałk.'
     },
     {
-        src: 'images/11.jpg.WebP',
-        alt: 'Zdjęcie 12',
+        src: 'images/3.webp',
+        alt: 'Zdjęcie 3',
         category: 'art',
         title: 'Wiatr',
-        description: 'Praca na temat "Wiatr" w ramach zajęć z fotografii.'
+        description: 'Zdjęcie tematyczne "Wiatr".'
     },
     {
-        src: 'images/12.jpg.WebP',
-        alt: 'Zdjęcie 13',
+        src: 'images/4.webp',
+        alt: 'Zdjęcie4',
         category: 'landscape',
-        title: 'Brama Grodzka.',
-        description: 'Brama Grodzka w Lublinie.'
+        title: 'Brama Grodzka',
+        description: 'Droga przez bramę do zamku, Lublin.'
     },
     {
-        src: 'images/13.jpg.WebP',
-        alt: 'Zdjęcie 14',
+        src: 'images/5.webp',
+        alt: 'Zdjęcie 5',
         category: 'landscape',
-        title: 'Jeleniogórski Park Krajobrazowy',
-        description: 'Droga do góry w Jeleniogórskim Parku Krajobrazowym.'
+        title: 'Zamek Chojnik',
+        description: 'Droga na zamek Chojnik, Jelenia Góra.'
     },
     {
-        src: 'images/14.jpg.WebP',
-        alt: 'Zdjęcie 15',
+        src: 'images/6.webp',
+        alt: 'Zdjęcie 6',
         category: 'landscape',
-        title: 'Tatry',
-        description: 'Góry i pagórki w Tatrach.'
+        title: 'Widokówka',
+        description: 'Krajobraz Tatr.'
     },
     {
-        src: 'images/15.jpg.WebP',
-        alt: 'Zdjęcie 16',
+        src: 'images/7.webp',
+        alt: 'Zdjęcie 7',
         category: 'landscape',
-        title: 'Most w Rydze',
-        description: 'Most w Rydze na Łotwie.'
+        title: 'Ryga',
+        description: 'Miasto Ryga.'
     },
     {
-        src: 'images/16.jpg.WebP',
-        alt: 'Zdjęcie 17',
+        src: 'images/8.webp',
+        alt: 'Zdjęcie 8',
         category: 'landscape',
-        title: 'Biebrzański Park Krajobrazowy',
-        description: 'Zachód śłońca na łąkach w Biebrzańskim Parku Krajobrazowym.'
+        title: 'Biebrza',
+        description: 'Pejzaż Parku Narodowego Biebrza.'
     },
     {
-        src: 'images/17.jpg.WebP',
-        alt: 'Zdjęcie 18',
+        src: 'images/9.webp',
+        alt: 'Zdjęcie 9',
         category: 'art',
         title: 'Kreatura',
-        description: 'Praca na temat "Kreatura" w ramach zajęć z fotografii.'
+        description: 'Zdjęcie tematyczne "kreatura".'
     },
     {
-        src: 'images/18.jpg.WebP',
-        alt: 'Zdjęcie 19',
+        src: 'images/10.webp',
+        alt: 'Zdjęcie 10',
+        category: 'landscape',
+        title: 'Pejzaż Tatr',
+        description: 'Góry i doliny w Tatrach.'
+    },
+    {
+        src: 'images/11.webp',
+        alt: 'Zdjęcie 11',
         category: 'landscape',
         title: 'Tatry',
-        description: 'Góry i pagórki w Tatrach.'
+        description: 'Droga w lesie we mgle.'
     },
     {
-        src: 'images/19.jpg.WebP',
-        alt: 'Zdjęcie 20',
+        src: 'images/12.webp',
+        alt: 'Zdjęcie 12',
         category: 'landscape',
-        title: 'Tatry',
-        description: 'Góry i pagórki w Tatrach.'
+        title: 'Ulica w Rydze',
+        description: 'Architektura w mieście Ryga.'
     },
     {
-        src: 'images/20.jpg.WebP',
-        alt: 'Zdjęcie 21',
+        src: 'images/13.webp',
+        alt: 'Zdjęcie 13',
         category: 'landscape',
         title: 'Bieszczady',
-        description: 'Góry i pagórki w Bieszczadach.'
+        description: 'Szczyt w Bieszczadach.'
     },
     {
-        src: 'images/21.jpg.WebP',
-        alt: 'Zdjęcie 22',
+        src: 'images/14.webp',
+        alt: 'Zdjęcie 14',
         category: 'art',
-        title: '(Nie)dowidzenia',
-        description: 'Praca na temat "(Nie)dowidzenia" w ramach zajęć z fotografii.'
+        title: 'Drzewa',
+        description: 'Zdjęcie tematyczne "(Nie)dowidzenia".'
     },
     {
-        src: 'images/22.jpg.WebP',
+        src: 'images/15.webp',
+        alt: 'Zdjęcie 15',
+        category: 'landscape',
+        title: 'Bacówka w Tatrach',
+        description: 'Droga Doliną.'
+    },
+    {
+        src: 'images/16.webp',
+        alt: 'Zdjęcie 16',
+        category: 'landscape',
+        title: 'Dolina rzeczna w Tatrach',
+        description: 'Stary most nad strumieniem.'
+    },
+    {
+        src: 'images/17.webp',
+        alt: 'Zdjęcie 17',
+        category: 'art',
+        title: 'Spojrzenie',
+        description: 'Praca na temat "Spojrzenie", wystawa PIK.'
+    },
+    {
+        src: 'images/18.webp',
+        alt: 'Zdjęcie 18',
+        category: 'art',
+        title: 'Po drugiej stronie',
+        description: 'Praca na temat "Po drugiej stronie". Wystawa PIK. Opis: Jak dopasować dwa odmienne stany? Pięść jako zdecydowany charakter i otwarda dłoń jako uległość?'
+    },
+    {
+        src: 'images/19.webp',
+        alt: 'Zdjęcie 19',
+        category: 'landscape',
+        title: 'Bieszczady',
+        description: 'Widokówka z Bieszczad.'
+    },
+    {
+        src: 'images/20.webp',
+        alt: 'Zdjęcie 20',
+        category: 'landscape',
+        title: 'Dolina Gąsienicowa, Tatry',
+        description: 'Malownicza kraina w Tatrach.'
+    },
+    {
+        src: 'images/21.webp',
+        alt: 'Zdjęcie 21',
+        category: 'landscape',
+        title: 'Dolina Gąsienicowa, Tatry',
+        description: 'Malownicza kraina w Tatrach Vol.2'
+    },
+    {
+        src: 'images/22.webp',
+        alt: 'Zdjęcie 22',
+        category: 'landscape',
+        title: 'Droga na szczyt.',
+        description: 'Urok Bieszczadów.'
+    },
+    {
+        src: 'images/23.webp',
         alt: 'Zdjęcie 23',
         category: 'landscape',
-        title: 'Tatry',
-        description: 'Droga pod górami.'
-    },
-    {
-        src: 'images/23.jpg.WebP',
-        alt: 'Zdjęcie 24',
-        category: 'landscape',
-        title: 'Tatry',
+        title: 'Widokówka Tatry',
         description: 'Droga przez góry.'
     },
     {
-        src: 'images/24.jpg.WebP',
-        alt: 'Zdjęcie 25',
-        category: 'art',
-        title: 'Dwa w jednym.',
-        description: 'Praca na temat "Dwa w jednym" w ramach zajęć z fotografii.'
-    },
-    {
-        src: 'images/25.jpg.WebP',
-        alt: 'Zdjęcie 26',
-        category: 'art',
-        title: 'Po drugiej stronie',
-        description: 'Praca na temat "Po drugiej stronie" w ramach zajęć z fotografii.'
-    },
-    {
-        src: 'images/26.jpg.WebP',
-        alt: 'Zdjęcie 27',
-        category: 'landscape',
-        title: 'Bieszczady',
-        description: 'Panorama Bieszczadów.'
-    },
-    {
-        src: 'images/27.jpg.WebP',
-        alt: 'Zdjęcie 28',
-        category: 'landscape',
-        title: 'Dolina Gąsienicowa',
-        description: 'Dolina Gąsienicowa w Tatrach przy pogodzie puchmurnej, jesiennej.'
-    },
-    {
-        src: 'images/28.jpg.WebP',
-        alt: 'Zdjęcie 29',
-        category: 'landscape',
-        title: 'Dolina Gąsienicowa',
-        description: 'Dolina Gąsienicowa w Tatrach przy pogodzie słonecznej.'
-    },
-    {
-        src: 'images/29.jpg.WebP',
-        alt: 'Zdjęcie 30',
-        category: 'landscape',
-        title: 'Bieszczady',
-        description: 'Droga do góry w Bieszczadach.'
-    },
-    {
-        src: 'images/30.jpg.WebP',
-        alt: 'Zdjęcie 31',
+        src: 'images/24.webp',
+        alt: 'Zdjęcie 24',
         category: 'landscape',
         title: 'Borowy Jar',
-        description: 'Borowy Jar w Jeleniej Górze.  '
+        description: 'Drogami Borowego Jaru.'
     },
     {
-        src: 'images/31.jpg.WebP',
-        alt: 'Zdjęcie 32',
+        src: 'images/25.webp',
+        alt: 'Zdjęcie 25',
         category: 'art',
         title: 'Minimalizm',
         description: 'Praca na temat "Minimalizm" w ramach zajęć z fotografii.'
     },
     {
-        src: 'images/32.jpg.WebP',
-        alt: 'Zdjęcie 33',
+        src: 'images/26.webp',
+        alt: 'Zdjęcie 26',
         category: 'landscape',
-        title: 'Tatry',
-        description: 'Droga przez góry do Smreczyńskiego stawu.'
+        title: 'Droga w Tatrach',
+        description: 'Schodki do stawu.'
     },
     {
-        src: 'images/33.jpg.WebP',
-        alt: 'Zdjęcie 34',
+        src: 'images/27.webp',
+        alt: 'Zdjęcie 27',
         category: 'landscape',
         title: 'Suwalszczyzna',
-        description: 'Droga przez pola w okolicach Wodziłek.'
+        description: 'Uroki wsi na Suwalszczyźnie.'
     },
     {
-        src: 'images/34.jpg.WebP',
-        alt: 'Zdjęcie 35',
+        src: 'images/28.webp',
+        alt: 'Zdjęcie 28',
         category: 'portrait',
-        title: 'Owca górska',
-        description: 'Interesowna owca górska w Zakopanem.'
+        title: 'Zakopiańska owca',
+        description: 'Interesowna owca zagląda w obiektyw podczas przemarszu.'
+    },
+    {
+        src: 'images/29.webp',
+        alt: 'Zdjęcie 29',
+        category: 'landscape',
+        title: 'Kościół Wang w Karpaczu',
+        description: 'XII-wieczny, skandynawski kościół cały z drewna.'
+    },
+    {
+        src: 'images/30.webp',
+        alt: 'Zdjęcie 30',
+        category: 'landscape',
+        title: 'Droga z zamku Chojnik',
+        description: 'Jeleniogórski Park.'
+    },
+    {
+        src: 'images/31.webp',
+        alt: 'Zdjęcie 31',
+        category: 'landscape',
+        title: 'Charakterne Tatry',
+        description: 'Ulubiony kadr z Tatr.'
+    },
+    {
+        src: 'images/32.webp',
+        alt: 'Zdjęcie 32',
+        category: 'landscape',
+        title: 'Jodły Tatrzańskie',
+        description: 'Tatry.'
+    },
+    {
+        src: 'images/33.webp',
+        alt: 'Zdjęcie 33',
+        category: 'art',
+        title: 'Codzienność',
+        description: 'Zdjęcie tematyczne "Codzienność".'
+    },
+    {
+        src: 'images/34.webp',
+        alt: 'Zdjęcie 34',
+        category: 'landscape',
+        title: 'Muzeum Wsi w Lubline',
+        description: 'Obraz starodwanej wsi Lubelskiej.'
+    },
+    {
+        src: 'images/35.webp',
+        alt: 'Zdjęcie 35',
+        category: 'landscape',
+        title: 'Sen na jawie',
+        description: 'Zdjęcie tematyczne "Sen na jawie".'
+    },
+    {
+        src: 'images/36.webp',
+        alt: 'Zdjęcie 36',
+        category: 'art',
+        title: 'Osobnik',
+        description: 'Zdjęcie tematyczne "niewyraźne".'
+    },
+    {
+        src: 'images/37.webp',
+        alt: 'Zdjęcie 37',
+        category: 'portrait',
+        title: 'Autoportret',
+        description: 'Plener w intymnym miejscu.'
+    },
+    {
+        src: 'images/38.webp',
+        alt: 'Zdjęcie 38',
+        category: 'art',
+        title: 'Samochód vintage',
+        description: 'Samochód w Londynie na pokazie.'
+    },
+    {
+        src: 'images/39.webp',
+        alt: 'Zdjęcie 39',
+        category: 'portrait',
+        title: 'Wspólna przestrzeń',
+        description: 'Autoportrety artystyczne.'
+    },
+    {
+        src: 'images/40.webp',
+        alt: 'Zdjęcie 40',
+        category: 'art',
+        title: 'Spojrzenie',
+        description: 'Zdjęcie tematyczne "Spojrzenie".'
+    },
+    {
+        src: 'images/41.webp',
+        alt: 'Zdjęcie 41',
+        category: 'portrait',
+        title: 'Autoportret',
+        description: 'Autoportret artystyczny.'
+    },
+    {
+        src: 'images/42.webp',
+        alt: 'Zdjęcie 42',
+        category: 'art',
+        title: 'Przyjemne drzewo',
+        description: 'Zdjęcie z pleneru.'
+    },
+    {
+        src: 'images/43.webp',
+        alt: 'Zdjęcie 43',
+        category: 'portrait',
+        title: 'Autoportret',
+        description: 'Artystyczny autoportret.'
+    },
+    {
+        src: 'images/44.webp',
+        alt: 'Zdjęcie 44',
+        category: 'art',
+        title: 'Końskie wesele',
+        description: 'Zdjęcie tematyczne, wystawa PIK.'
+    },
+    {
+        src: 'images/45.webp',
+        alt: 'Zdjęcie 45',
+        category: 'portrait',
+        title: 'Autoportret',
+        description: 'Kolejny autoportret artystyczny.'
+    },
+    {
+        src: 'images/46.webp',
+        alt: 'Zdjęcie 46',
+        category: 'art',
+        title: 'Mijanie',
+        description: 'Sfera chodnika.'
+    },
+    {
+        src: 'images/47.webp',
+        alt: 'Zdjęcie 47',
+        category: 'art',
+        title: 'Nierozerwalność',
+        description: 'Praca na wystawę.'
+    },
+    {
+        src: 'images/48.webp',
+        alt: 'Zdjęcie 48',
+        category: 'art',
+        title: 'Spokój ogarnia chaos',
+        description: 'Zdjęcie artystyczne.'
+    },
+    {
+        src: 'images/49.webp',
+        alt: 'Zdjęcie 49',
+        category: 'art',
+        title: 'Mrozi naturę, martwe',
+        description: 'Okolice Borowego Jaru.'
+    },
+    {
+        src: 'images/50.webp',
+        alt: 'Zdjęcie 50',
+        category: 'portrait',
+        title: 'Kolejna przestrzeń.',
+        description: 'Praca artystyczna.'
+    },
+    {
+        src: 'images/51.webp',
+        alt: 'Zdjęcie 51',
+        category: 'art',
+        title: 'Po drugiej stronie',
+        description: 'Wystawa PIK. Co mogą mówić blizny? Historie. Każda z nich coś ma.'
+    },
+    {
+        src: 'images/52.webp',
+        alt: 'Zdjęcie 52',
+        category: 'art',
+        title: 'Wolność',
+        description: 'Praca na temat "Wolność", wystawa Marchand.'
+    },
+    {
+        src: 'images/53.webp',
+        alt: 'Zdjęcie 53',
+        category: 'art',
+        title: 'Klisza 35',
+        description: 'Analogowo-35-milimetrowo'
+    },
+    {
+        src: 'images/54.webp',
+        alt: 'Zdjęcie 54',
+        category: 'art',
+        title: 'Dwa światy',
+        description: 'Praca na temat "Dwa Światy". Wystawa PIK.'
+    },
+    {
+        src: 'images/55.webp',
+        alt: 'Zdjęcie 55',
+        category: 'art',
+        title: 'Kształty, kreski, cienie.',
+        description: 'Budowa myśli.'
+    },
+    {
+        src: 'images/56.webp',
+        alt: 'Zdjęcie 56',
+        category: 'art',
+        title: 'Inspiracja z filmu',
+        description: 'Rekonstrukcja zdjęcia w "łazience Adolfa".'
+    },
+    {
+        src: 'images/57.webp',
+        alt: 'Zdjęcie 57',
+        category: 'landscape',
+        title: 'Morze Bałtyckie',
+        description: 'Wyczekiwanie.'
+    },
+    {
+        src: 'images/58.webp',
+        alt: 'Zdjęcie 58',
+        category: 'landscape',
+        title: 'Góra Koni',
+        description: 'Moment, dobry moment.'
+    },
+    {
+        src: 'images/59.webp',
+        alt: 'Zdjęcie 59',
+        category: 'landscape',
+        title: 'Śladami Czechowicza',
+        description: 'Uliczka w Lublinie.'
+    },
+    {
+        src: 'images/60.webp',
+        alt: 'Zdjęcie 60',
+        category: 'art',
+        title: 'Autoportret',
+        description: 'Autoportret "Berecik" w ramach warsztatów artystycznych.'
+    },
+    {
+        src: 'images/61.webp',
+        alt: 'Zdjęcie 61',
+        category: 'art',
+        title: '',
+        description: 'Obraz rzadki.'
     }
 ];
 

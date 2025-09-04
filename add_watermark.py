@@ -27,8 +27,10 @@ def add_watermark(input_path, output_path, text="© swiatlocien.org.pl", opacity
         except:
             font = ImageFont.load_default()
     
-    # Pobierz rozmiar tekstu
-    text_width, text_height = draw.textsize(text, font)
+    # Oblicz rozmiar tekstu za pomocą textbbox (nowoczesna metoda)
+    bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]    
     
     # Oblicz pozycję tekstu (środek obrazu)
     x = (image.width - text_width) // 2
@@ -70,7 +72,7 @@ def process_directory(input_dir, output_dir):
     for filename in os.listdir(input_dir):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', ".webp")):
             input_path = os.path.join(input_dir, filename)
-            output_path = os.path.join(output_dir, filename + ".WebP")
+            output_path = os.path.join(output_dir, filename + ".webp")
             
             try:
                 add_watermark(input_path, output_path)
@@ -80,8 +82,8 @@ def process_directory(input_dir, output_dir):
 
 if __name__ == "__main__":
     # Ścieżki do katalogów
-    input_directory = "images2"  # Katalog ze zdjęciami źródłowymi
-    output_directory = "images"  # Katalog na zdjęcia z watermarkem
+    input_directory = "przerob"  # Katalog ze zdjęciami źródłowymi
+    output_directory = "images2"  # Katalog na zdjęcia z watermarkem
     
     # Przetwórz wszystkie zdjęcia
     process_directory(input_directory, output_directory) 
